@@ -1,0 +1,7 @@
+components:
+- layout_properties: {grid_position: 'XIOEKK,IWCYLH'}
+  name: column_panel_main
+  properties: {}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

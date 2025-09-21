@@ -1,0 +1,35 @@
+components:
+- layout_properties: {slot: logo}
+  name: image_logo
+  properties: {height: 99.19998168945312, source: _/theme/NicIPAM_logo.png}
+  type: Image
+- components:
+  - components: []
+    event_bindings: {click: link_home_click}
+    layout_properties: {grid_position: 'HEUGGX,QISMQJ'}
+    name: link_home
+    properties: {align: center, bold: true, icon: 'fa:home', role: null, text: HOME}
+    type: Link
+  - event_bindings: {click: link_networks_click}
+    layout_properties: {grid_position: 'RVPXIG,TGNYWQ'}
+    name: link_networks
+    properties: {align: center, bold: true, icon: 'fa:sitemap', text: NETWORKS}
+    type: Link
+  - event_bindings: {click: link_scan_click}
+    layout_properties: {grid_position: 'KEBOAA,DPZZDB'}
+    name: link_scan
+    properties: {align: center, bold: true, icon: 'fa:search', text: SCAN}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: column_panel_sidebar
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
+slots:
+  slot_1:
+    index: 2
+    set_layout_properties: {slot: default}
+    target: {name: '', type: container}

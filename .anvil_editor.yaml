@@ -1,9 +1,20 @@
 unique_ids:
   assets:
+    NicIPAM_logo.png: '1758435265991617603659575.1604'
     standard-page.html: OMZZGPOV3ZX52FRC7K2QUWT2H3KL43U2
     theme.css: PKU47AONEYEJ35OP5R5OFQARH5EVZQK5
   forms:
-    Form1: 4XEKOVJYWBZKXD6KJNP7LMLJUXYHGUF2
+    add_network_form: '1758434430333701787873617.6206'
+    home_page: '1758434396466749417532227.5157'
+    layout: 4XEKOVJYWBZKXD6KJNP7LMLJUXYHGUF2
+    networks_page: '1758434371043744119476369.6632'
+    networks_page.add_network_form: '1758438221422125406240243.05191'
+    networks_page.delete_network_form: '1758438234893989921349637.606'
+    networks_page.network_info_panel: '1758437554614235183791394.10693'
+    scan_network_page: '1758434406878792430076155.9977'
+    view_network_page: '1758437748972365329103889.2369'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    db_functions: '175843779603515434430329.133497'
+    scanner: '1758434258055834884958952.5203'
