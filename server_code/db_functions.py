@@ -23,6 +23,10 @@ def add_network(item):
     ip_addr= item['ip'],
   )
 
+@anvil.server.callable
+def get_networks():
+  return app_tables.networks.search()
+
 
 
 def get_next_id():
