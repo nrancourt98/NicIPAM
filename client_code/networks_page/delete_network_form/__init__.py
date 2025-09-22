@@ -12,5 +12,5 @@ class delete_network_form(delete_network_formTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.drop_down_network.items = anvil.server.call('get_networks')
+    self.drop_down_network.items = (network['name'] for network in anvil.server.call('get_networks'))
     

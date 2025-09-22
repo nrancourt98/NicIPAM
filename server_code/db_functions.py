@@ -27,7 +27,15 @@ def add_network(item):
 def get_networks():
   return app_tables.networks.search()
 
-
+@anvil.server.callable
+def delete_network(network):
+  net_id = network['id']
+  ip_addresses = app_tables.address.search(parent_id=net_id)
+  for r in ip_addresses:
+    r.delete()
+  network.delete()
+  return True
+  
 
 def get_next_id():
   id = app_tables.networks.search()

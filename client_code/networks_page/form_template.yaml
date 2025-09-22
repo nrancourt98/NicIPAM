@@ -10,7 +10,8 @@ components_by_slot:
         name: button_add
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: Add Network}
         type: Button
-      - layout_properties: {grid_position: 'TEORLY,MJDWPJ'}
+      - event_bindings: {click: button_delete_click}
+        layout_properties: {grid_position: 'TEORLY,MJDWPJ'}
         name: button_delete
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: delete network}
         type: Button
