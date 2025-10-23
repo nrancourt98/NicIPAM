@@ -12,6 +12,7 @@ unique_ids:
     networks_page.network_info_panel: '1758437554614235183791394.10693'
     scan_network_page: '1758434406878792430076155.9977'
     view_network_page: '1758437748972365329103889.2369'
+    view_network_page.address_template: '1761198728219213356688126.62967'
   modules: {}
   scripts: {}
   server_modules:

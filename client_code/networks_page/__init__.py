@@ -12,6 +12,7 @@ class networks_page(networks_pageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.repeating_panel_networks.items = app_tables.networks.search(tables.order_by("vlan_id", ascending=True))
 
   def button_delete_click(self, **event_args):
     """This method is called when the button is clicked"""

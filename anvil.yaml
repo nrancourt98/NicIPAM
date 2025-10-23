@@ -1,7 +1,7 @@
 allow_embedding: false
 db_schema:
   address:
-    client: none
+    client: search
     columns:
     - admin_ui: {order: 0, width: 200}
       name: parent_id
@@ -15,10 +15,13 @@ db_schema:
     - admin_ui: {order: 3, width: 200}
       name: description
       type: string
+    - admin_ui: {order: 2.5, width: 200}
+      name: hostname
+      type: string
     server: full
     title: address
   networks:
-    client: none
+    client: search
     columns:
     - admin_ui: {order: 0, width: 200}
       name: id
@@ -31,6 +34,12 @@ db_schema:
       type: string
     - admin_ui: {order: 3, width: 200}
       name: vlan_id
+      type: number
+    - admin_ui: {order: 4, width: 200}
+      name: used
+      type: number
+    - admin_ui: {order: 5, width: 200}
+      name: total
       type: number
     server: full
     title: networks
