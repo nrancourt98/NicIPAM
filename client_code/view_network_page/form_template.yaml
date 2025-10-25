@@ -10,13 +10,12 @@ components_by_slot:
       - data_bindings: []
         layout_properties: {grid_position: 'NGUELG,CLIVWR'}
         name: label_network_name
-        properties: {bold: true, foreground: 'theme:On Primary', role: display, text: Name}
+        properties: {align: center, bold: true, foreground: 'theme:On Primary', role: display, text: Name}
         type: Label
-      - event_bindings: {click: button_add_address_click}
-        layout_properties: {grid_position: 'NGUELG,IDABYZ'}
-        name: button_add_address
-        properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: ADD IP ADDRESS}
-        type: Button
+      - layout_properties: {grid_position: 'NGUELG,TALHQL'}
+        name: spacer_1
+        properties: {height: 32}
+        type: Spacer
       layout_properties: {grid_position: 'PFSQTL,RJUXFX'}
       name: column_panel_buttons
       properties: {}
@@ -25,25 +24,35 @@ components_by_slot:
       - data_bindings: []
         layout_properties: {grid_position: 'IBVVYD,QMTKBE'}
         name: label_ip
-        properties: {underline: true}
+        properties: {align: center, underline: true}
         type: Label
       - data_bindings: []
         layout_properties: {grid_position: 'IBVVYD,RLOXYF'}
         name: label_vlan
-        properties: {underline: true}
+        properties: {align: center, underline: true}
         type: Label
       - data_bindings: []
         layout_properties: {grid_position: 'IBVVYD,OCSPKD'}
         name: label_total_used
-        properties: {underline: true}
+        properties: {align: center, underline: true}
         type: Label
-      - layout_properties: {grid_position: 'IBVVYD,JAMBXO'}
+      layout_properties: {grid_position: 'DVHGBL,FKHMIC'}
+      name: column_panel_info
+      properties: {col_widths: '{"QMTKBE":15,"RLOXYF":10,"OCSPKD":15}'}
+      type: ColumnPanel
+    - components:
+      - event_bindings: {click: button_add_address_click}
+        layout_properties: {grid_position: 'WLZCLA,IILACY'}
+        name: button_add_address
+        properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: ADD IP ADDRESS}
+        type: Button
+      - layout_properties: {grid_position: 'WLZCLA,UACQNQ'}
         name: button_show_available
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: SHOW AVAILABLE IP}
         type: Button
-      layout_properties: {grid_position: 'DVHGBL,FKHMIC'}
-      name: column_panel_info
-      properties: {col_widths: '{"QMTKBE":15,"RLOXYF":10,"OCSPKD":15,"JAMBXO":20}'}
+      layout_properties: {grid_position: 'COZGGI,IQCWOS'}
+      name: column_panel_1
+      properties: {}
       type: ColumnPanel
     - layout_properties: {grid_position: 'SNMDCN,DPZUGI'}
       name: repeating_panel_addresses
