@@ -17,3 +17,13 @@ class view_network_page(view_network_pageTemplate):
     self.label_vlan.text = "VLAN ID: " + str(network['vlan_id'])
     self.label_total_used.text = "USED: " + str(network['used']) + "/" + str(network['total'])
     self.label_ip.text = "SUBNET: " + network['ip_addr']
+
+  def link_return_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('networks_page')
+
+  def button_add_address_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    saved = alert(
+      
+    )
