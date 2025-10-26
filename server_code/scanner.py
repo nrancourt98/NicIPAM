@@ -25,9 +25,3 @@ def arp_scan(network: str, timeout: float = 2) -> list[dict]:
   answered, _ = srp(packet, timeout=timeout, verbose=False)
   return [{"ip": recv.psrc, "mac": recv.hwsrc} for _, recv in answered]
 
-if __name__ == "__main__":
-  net = "192.168.1.0/24"
-  clients = arp_scan(net)
-  print("Discovered devices:")
-  for c in clients:
-    print(f"  {c['ip']}  ({c['mac']})")

@@ -14,6 +14,8 @@ unique_ids:
     view_network_page: '1758437748972365329103889.2369'
     view_network_page.add_ip_form: '176137769600397313105099.22131'
     view_network_page.address_template: '1761198728219213356688126.62967'
+    view_network_page.available_ip_form: '1761489138170392929422143.6373'
+    view_network_page.scan_ip_form: '1761489063551334742941625.8603'
   modules: {}
   scripts: {}
   server_modules:
