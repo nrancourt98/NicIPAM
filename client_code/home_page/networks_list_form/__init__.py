@@ -1,4 +1,4 @@
-from ._anvil_designer import available_ip_formTemplate
+from ._anvil_designer import networks_list_formTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -6,7 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class available_ip_form(available_ip_formTemplate):
+class networks_list_form(networks_list_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

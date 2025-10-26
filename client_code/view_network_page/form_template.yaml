@@ -24,17 +24,17 @@ components_by_slot:
       - data_bindings: []
         layout_properties: {grid_position: 'IBVVYD,QMTKBE'}
         name: label_ip
-        properties: {align: center, underline: true}
+        properties: {align: center, underline: false}
         type: Label
       - data_bindings: []
         layout_properties: {grid_position: 'IBVVYD,RLOXYF'}
         name: label_vlan
-        properties: {align: center, underline: true}
+        properties: {align: center, underline: false}
         type: Label
       - data_bindings: []
         layout_properties: {grid_position: 'IBVVYD,OCSPKD'}
         name: label_total_used
-        properties: {align: center, underline: true}
+        properties: {align: center, underline: false}
         type: Label
       layout_properties: {grid_position: 'DVHGBL,FKHMIC'}
       name: column_panel_info
@@ -46,11 +46,13 @@ components_by_slot:
         name: button_add_address
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: ADD IP ADDRESS}
         type: Button
-      - layout_properties: {grid_position: 'WLZCLA,LHFYVH'}
+      - event_bindings: {click: button_scan_click}
+        layout_properties: {grid_position: 'WLZCLA,LHFYVH'}
         name: button_scan
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: SCAN NEW IP}
         type: Button
-      - layout_properties: {grid_position: 'WLZCLA,UACQNQ'}
+      - event_bindings: {click: button_show_available_click}
+        layout_properties: {grid_position: 'WLZCLA,UACQNQ'}
         name: button_show_available
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: SHOW AVAILABLE IP}
         type: Button

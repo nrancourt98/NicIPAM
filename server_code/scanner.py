@@ -15,13 +15,43 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
-from scapy.all import ARP, Ether, srp
+import ipaddress
+import subprocess
+import platform
+import socket
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-def arp_scan(network: str, timeout: float = 2) -> list[dict]:
-  """
-    Send ARP who-has to the entire subnet. Returns list of {'ip','mac'}.
-    """
-  packet = Ether(dst="ff:ff:ff:ff:ff:ff") / ARP(pdst=network)
-  answered, _ = srp(packet, timeout=timeout, verbose=False)
-  return [{"ip": recv.psrc, "mac": recv.hwsrc} for _, recv in answered]
 
+def ping_host(ip):
+  param = "-n" if platform.system().lower() == "windows" else "-c"
+  try:
+    result = subprocess.run(
+      ["ping", param, "1", str(ip)],
+      stdout=subprocess.DEVNULL,
+      stderr=subprocess.DEVNULL
+    )
+    return result.returncode == 0
+  except Exception:
+    return False
+
+def resolve_hostname(ip):
+  try:
+    return socket.gethostbyaddr(str(ip))[0]
+  except socket.herror:
+    return "Unknown"
+
+@anvil.server.callable
+def scan_subnet(subnet):
+  hosts = {}
+  net = ipaddress.ip_network(subnet, strict=False)
+  with ThreadPoolExecutor(max_workers=50) as executor:
+    futures = {executor.submit(ping_host, ip): ip for ip in net.hosts()}
+    for future in as_completed(futures):
+      ip = futures[future]
+      if future.result():  # Host is alive
+        hostname = resolve_hostname(ip)
+        hosts[str(ip)] = {"hostname": hostname, "mac": None}
+  return hosts
+
+
+  

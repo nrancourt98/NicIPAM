@@ -24,3 +24,7 @@ class layout(layoutTemplate):
   def link_scan_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('scan_network_page')
+
+  def link_maintenance_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('maintenance_page')

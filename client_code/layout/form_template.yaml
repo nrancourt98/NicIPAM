@@ -20,6 +20,11 @@ components:
     name: link_scan
     properties: {align: center, bold: true, icon: 'fa:search', text: SCAN}
     type: Link
+  - event_bindings: {click: link_maintenance_click}
+    layout_properties: {grid_position: 'QQUAVA,HGBQYV'}
+    name: link_maintenance
+    properties: {align: center, bold: true, icon: 'fa:wrench', text: MAINTENANCE}
+    type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_sidebar
   properties: {}
