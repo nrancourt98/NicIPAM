@@ -1,3 +1,32 @@
-components: []
+components:
+- components:
+  - layout_properties: {grid_position: 'AJGLBJ,DSCTAW'}
+    name: label_name
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'AJGLBJ,LFYFQV'}
+    name: label_subnet
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'AJGLBJ,PKBUMK'}
+    name: label_total
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'AJGLBJ,QOFAMQ'}
+    name: label_used
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'AJGLBJ,BVYHDK'}
+    name: label_remaining
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'AJGLBJ,PWCJZW'}
+    name: button_1
+    properties: {text: button_1}
+    type: Button
+  layout_properties: {full_width_row: true, grid_position: 'LMWZUR,QDGYXX'}
+  name: column_panel_main
+  properties: {}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

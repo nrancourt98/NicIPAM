@@ -4,7 +4,7 @@ components_by_slot:
     - components:
       - layout_properties: {grid_position: 'EWSNOQ,YQMXUN'}
         name: label_title
-        properties: {align: center}
+        properties: {align: center, background: '', bold: true, foreground: 'theme:Primary', role: display, text: WELCOME TO YOUR NETWORK!}
         type: Label
       layout_properties: {full_width_row: true, grid_position: 'THHILG,YZWLJM'}
       name: column_panel_title
@@ -17,11 +17,11 @@ components_by_slot:
         type: Button
       - layout_properties: {grid_position: 'XTDGZV,KYARIM'}
         name: button_scan
-        properties: {text: button_2}
+        properties: {background: 'theme:Primary', foreground: 'theme:On Primary', icon: 'fa:search', text: GO TO SCAN}
         type: Button
       - layout_properties: {grid_position: 'XTDGZV,UMZYLE'}
         name: button_maintenance
-        properties: {text: button_3}
+        properties: {background: 'theme:Primary', foreground: 'theme:On Primary', icon: 'fa:wrench', text: GO TO MAINTENANCE}
         type: Button
       layout_properties: {full_width_row: true, grid_position: 'VQKVKT,LLMHIR'}
       name: column_panel_buttons
