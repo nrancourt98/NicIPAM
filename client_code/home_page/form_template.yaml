@@ -27,6 +27,35 @@ components_by_slot:
       name: column_panel_buttons
       properties: {}
       type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'AJGLBJ,DSCTAW'}
+        name: label_name
+        properties: {align: center, bold: true, text: NAME, underline: true}
+        type: Label
+      - layout_properties: {grid_position: 'AJGLBJ,LFYFQV'}
+        name: label_subnet
+        properties: {align: center, bold: true, text: SUBNET, underline: true}
+        type: Label
+      - layout_properties: {grid_position: 'AJGLBJ,PKBUMK'}
+        name: label_total
+        properties: {align: center, bold: true, text: TOTAL, underline: true}
+        type: Label
+      - layout_properties: {grid_position: 'AJGLBJ,QOFAMQ'}
+        name: label_used
+        properties: {align: center, bold: true, text: USED, underline: true}
+        type: Label
+      - layout_properties: {grid_position: 'AJGLBJ,BVYHDK'}
+        name: label_remaining
+        properties: {align: center, bold: true, text: REMAINING, underline: true}
+        type: Label
+      - layout_properties: {grid_position: 'AJGLBJ,GNDJMO'}
+        name: spacer_1
+        properties: {height: 32}
+        type: Spacer
+      layout_properties: {grid_position: 'DJSJAH,OILZCZ'}
+      name: column_panel_labels
+      properties: {}
+      type: ColumnPanel
     - layout_properties: {full_width_row: true, grid_position: 'SEZOCJ,UHCPJC'}
       name: repeating_panel_networks
       properties: {item_template: home_page.networks_list_form}

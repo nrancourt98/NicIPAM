@@ -28,7 +28,7 @@ components:
     name: button_open
     properties: {background: 'theme:Secondary', foreground: 'theme:On Secondary', text: OPEN}
     type: Button
-  layout_properties: {grid_position: 'XIOEKK,IWCYLH'}
+  layout_properties: {full_width_row: true, grid_position: 'XIOEKK,IWCYLH'}
   name: column_panel_main
   properties: {col_widths: '{"AOSIQM":20,"INQWJS":15,"SCCEZR":12,"KLOTME":10,"OFTOOF":15}'}
   type: ColumnPanel

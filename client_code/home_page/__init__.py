@@ -12,3 +12,4 @@ class home_page(home_pageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.repeating_panel_networks.items = app_tables.networks.search()

@@ -1,7 +1,7 @@
 components_by_slot:
   slot_1:
   - components:
-    - layout_properties: {grid_position: 'LKKQGB,EDYUEZ'}
+    - layout_properties: {full_width_row: true, grid_position: 'LKKQGB,EDYUEZ'}
       name: column_panel_info
       properties: {}
       type: ColumnPanel
@@ -15,7 +15,7 @@ components_by_slot:
         name: button_delete
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', text: delete network}
         type: Button
-      layout_properties: {grid_position: 'HJFOXF,FALQFO'}
+      layout_properties: {full_width_row: true, grid_position: 'HJFOXF,FALQFO'}
       name: column_panel_buttons
       properties: {}
       type: ColumnPanel
@@ -44,11 +44,11 @@ components_by_slot:
         name: button_open
         properties: {background: '', foreground: '', text: '', visible: false}
         type: Button
-      layout_properties: {grid_position: 'PVGMOT,TUJMIJ'}
+      layout_properties: {full_width_row: true, grid_position: 'PVGMOT,TUJMIJ'}
       name: column_panel_main_copy
       properties: {col_widths: '{"AOSIQM":20,"INQWJS":15,"SCCEZR":12,"KLOTME":10,"OFTOOF":15}'}
       type: ColumnPanel
-    - layout_properties: {grid_position: 'KWTJYX,MDJQQS'}
+    - layout_properties: {full_width_row: true, grid_position: 'KWTJYX,MDJQQS'}
       name: repeating_panel_networks
       properties: {item_template: networks_page.network_info_panel}
       type: RepeatingPanel
