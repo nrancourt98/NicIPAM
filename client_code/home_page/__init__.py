@@ -13,3 +13,7 @@ class home_page(home_pageTemplate):
 
     # Any code you write here will run before the form opens.
     self.repeating_panel_networks.items = app_tables.networks.search()
+
+  def button_networks_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('networks_page')

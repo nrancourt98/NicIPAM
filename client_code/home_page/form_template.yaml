@@ -11,7 +11,8 @@ components_by_slot:
       properties: {}
       type: ColumnPanel
     - components:
-      - layout_properties: {grid_position: 'XTDGZV,XTGXVE'}
+      - event_bindings: {click: button_networks_click}
+        layout_properties: {grid_position: 'XTDGZV,XTGXVE'}
         name: button_networks
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', icon: 'fa:sitemap', text: GO TO NETWORKS}
         type: Button
