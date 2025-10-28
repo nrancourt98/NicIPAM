@@ -18,7 +18,7 @@ class networks_page(networks_pageTemplate):
     """This method is called when the button is clicked"""
     network = []
     delete = alert(
-      content=delete_network_form(network),
+      content=delete_network_form(item=network),
       title="Delete Network",
       large=True,
       buttons=[("DELETE", True), ("Cancel", False)]
@@ -29,6 +29,4 @@ class networks_page(networks_pageTemplate):
         alert("Network deleted successfully")
       else:
         alert("Function error")
-    else:
-      alert("Cancelled")
       

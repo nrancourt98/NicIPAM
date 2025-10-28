@@ -1,12 +1,21 @@
 components_by_slot:
   slot_1:
   - components:
+    - components:
+      - layout_properties: {grid_position: 'GQCDAV,CIIGSX'}
+        name: label_title
+        properties: {align: center, bold: true, foreground: 'theme:Primary', role: display, text: MAINTENANCE, underline: true}
+        type: Label
+      layout_properties: {full_width_row: true, grid_position: 'DXBOBF,RDRSHA'}
+      name: column_panel_title
+      properties: {}
+      type: ColumnPanel
     - event_bindings: {click: button_ip_int_click}
       layout_properties: {grid_position: 'PDIUAM,UPXFXK'}
       name: button_ip_int
       properties:
-        background: theme:Primary
-        foreground: theme:On Primary
+        background: theme:Secondary
+        foreground: theme:On Secondary
         text: |-
           UPDATE ALL DATABASE IP INTEGERS
           (Can be useful is sorting is weird)
@@ -15,8 +24,8 @@ components_by_slot:
       layout_properties: {grid_position: 'LZVMGI,KJRATS'}
       name: button_update_counts
       properties:
-        background: theme:Primary
-        foreground: theme:On Primary
+        background: theme:Secondary
+        foreground: theme:On Secondary
         text: |-
           UPDATE ALL DATABASE IP COUNTS PER NETWORK
           (Can be useful is counts are off)
