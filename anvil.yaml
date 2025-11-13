@@ -46,7 +46,7 @@ db_schema:
       type: number
     server: full
     title: networks
-metadata: {description: Nic's IP Address Management software, title: NicIPAM}
+metadata: {description: Nic's IP Address Management software, logo_img: 'asset:NicIPAM_logo-logo.png', title: NicIPAM}
 name: NicIPAM
 native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
 package_name: NicIPAM
