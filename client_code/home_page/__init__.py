@@ -17,3 +17,12 @@ class home_page(home_pageTemplate):
   def button_networks_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('networks_page')
+
+  def button_scan_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('scan_network_page')
+
+  def button_maintenance_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('maintenance_page')
+

@@ -31,3 +31,14 @@ def update_used_counts():
     addresses = app_tables.address.search(parent_id=nets['id'])
     nets['used'] = len(addresses)
   return True
+
+@anvil.server.callable
+def clean_orphaned():
+  ids = []
+  for net in app_tables.networks.search():
+    ids.append(net['id'])
+  for address in app_tables.address.search():
+    if not ids.__contains__(address['parent_id']): 
+      address.delete()
+  return True
+  

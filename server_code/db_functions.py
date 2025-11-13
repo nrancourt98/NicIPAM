@@ -21,9 +21,13 @@ import ipaddress
 def add_network(item):
   app_tables.networks.add_row(
     id=get_next_id(),
-    name= item['name'],
-    ip_addr= item['ip'],
+    name=item['name'],
+    ip_addr=item['ip_addr'],
+    vlan_id=int(item['vlan_id']),
+    used=0,
+    total=254
   )
+  return True
 
 @anvil.server.callable
 def get_networks():
@@ -31,11 +35,12 @@ def get_networks():
 
 @anvil.server.callable
 def delete_network(network):
-  net_id = network['id']
+  net = app_tables.networks.get(name=network)
+  net_id = net['id']
   ip_addresses = app_tables.address.search(parent_id=net_id)
   for r in ip_addresses:
     r.delete()
-  network.delete()
+  net.delete()
   return True
 
 @anvil.server.callable

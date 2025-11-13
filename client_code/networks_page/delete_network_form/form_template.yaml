@@ -5,7 +5,7 @@ components:
     properties: {text: 'Select the network you would like to delete. Keep in mind, this action is irreversible'}
     type: Label
   - data_bindings:
-    - {code: self.item, property: selected_value, writeback: false}
+    - {code: 'self.item[''name'']', property: selected_value, writeback: true}
     layout_properties: {grid_position: 'ZHRMSQ,GASVQA'}
     name: drop_down_network
     properties: {include_placeholder: true, placeholder: Select a network}

@@ -30,3 +30,13 @@ class maintenance_page(maintenance_pageTemplate):
       alert("IP counts have been updated!")
     else:
       alert("Function failed")
+
+  def button_delete_orphaned_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    result = False
+    result = anvil.server.call('clean_orphaned')
+    if result:
+      alert("Command finished successfully")
+    else:
+      alert("Failure!")
+

@@ -16,11 +16,13 @@ components_by_slot:
         name: button_networks
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', icon: 'fa:sitemap', text: GO TO NETWORKS}
         type: Button
-      - layout_properties: {grid_position: 'XTDGZV,KYARIM'}
+      - event_bindings: {click: button_scan_click}
+        layout_properties: {grid_position: 'XTDGZV,KYARIM'}
         name: button_scan
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', icon: 'fa:search', text: GO TO SCAN}
         type: Button
-      - layout_properties: {grid_position: 'XTDGZV,UMZYLE'}
+      - event_bindings: {click: button_maintenance_click}
+        layout_properties: {grid_position: 'XTDGZV,UMZYLE'}
         name: button_maintenance
         properties: {background: 'theme:Primary', foreground: 'theme:On Primary', icon: 'fa:wrench', text: GO TO MAINTENANCE}
         type: Button
