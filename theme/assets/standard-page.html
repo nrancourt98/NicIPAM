@@ -33,6 +33,14 @@
       $(window).trigger('resize');
     });
   }
+  function copyclip(text) {
+    const el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
   function showSidebar() {
     $('.nav-shield').addClass("shown");
     ln.addClass("shown").removeClass("hidden").css({left: "-100%"}).css({left: -ln.outerWidth()}).animate({left: 0}, function() {
