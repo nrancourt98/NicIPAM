@@ -41,4 +41,10 @@ def clean_orphaned():
     if not ids.__contains__(address['parent_id']): 
       address.delete()
   return True
+
+@anvil.server.callable
+def set_dhcp_all_false():
+  for net in app_tables.address.search():
+    net['dhcp'] = False
+  return True
   

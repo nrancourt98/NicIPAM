@@ -40,3 +40,11 @@ class maintenance_page(maintenance_pageTemplate):
     else:
       alert("Failure!")
 
+  def button_dhcp_reset_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    result = False
+    result = anvil.server.call('set_dhcp_all_false')
+    if result:
+      alert("Command finished successfully!")
+    else:
+      alert("Error: Function did not return True")

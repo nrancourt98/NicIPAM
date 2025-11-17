@@ -78,6 +78,12 @@ def find_parent_network(ip):
       break
   return app_tables.networks.get(id=id)
 
+@anvil.server.callable
+def toggle_dhcp(ip):
+  address = app_tables.address.get(ip=ip)
+  address['dhcp'] = not address['dhcp']
+  return address['dhcp']
+
 def get_next_id():
   id = app_tables.networks.search()
   if id:

@@ -4,31 +4,38 @@ components:
     - {code: 'self.item[''ip'']', property: text, writeback: false}
     layout_properties: {grid_position: 'YMXVJU,KZOEQZ'}
     name: label_ip
-    properties: {}
+    properties: {align: center}
     type: Label
   - data_bindings:
     - {code: 'self.item[''hostname'']', property: text, writeback: false}
     layout_properties: {grid_position: 'YMXVJU,BUBKQB'}
     name: label_hostname
-    properties: {}
+    properties: {align: center}
     type: Label
   - data_bindings:
     - {code: 'self.item[''mac'']', property: text, writeback: false}
     layout_properties: {grid_position: 'YMXVJU,IWLOHC'}
     name: label_mac
-    properties: {}
+    properties: {align: center}
     type: Label
   - data_bindings:
     - {code: 'self.item[''description'']', property: text, writeback: false}
     layout_properties: {grid_position: 'YMXVJU,HOGLDG'}
     name: label_description
-    properties: {}
+    properties: {align: center}
     type: Label
-  - layout_properties: {grid_position: 'YMXVJU,VDSSWR'}
+  - data_bindings:
+    - {code: 'self.item[''dhcp'']', property: checked, writeback: false}
+    layout_properties: {grid_position: 'YMXVJU,TNYWSL'}
+    name: check_box_dhcp
+    properties: {align: center, background: '', enabled: false, text: DHCP}
+    type: CheckBox
+  - event_bindings: {click: button_edit_click}
+    layout_properties: {grid_position: 'YMXVJU,VDSSWR'}
     name: button_edit
     properties: {background: 'theme:Secondary', foreground: 'theme:On Secondary', icon: 'fa:ellipsis-v', icon_align: top, text: ''}
     type: Button
-  layout_properties: {grid_position: 'CGPIXI,PQVBMY'}
+  layout_properties: {full_width_row: true, grid_position: 'CGPIXI,PQVBMY'}
   name: column_panel_main
   properties: {col_widths: '{"KZOEQZ":10,"BUBKQB":15,"IWLOHC":15,"HOGLDG":15,"VDSSWR":5}'}
   type: ColumnPanel
