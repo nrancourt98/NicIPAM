@@ -17,41 +17,48 @@ import anvil.server
 #
 import ipaddress
 import subprocess
-import platform
-import socket
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
-
-def ping_host(ip):
-  param = "-n" if platform.system().lower() == "windows" else "-c"
-  try:
-    result = subprocess.run(
-      ["ping", param, "1", str(ip)],
-      stdout=subprocess.DEVNULL,
-      stderr=subprocess.DEVNULL
-    )
-    return result.returncode == 0
-  except Exception:
-    return False
-
-def resolve_hostname(ip):
-  try:
-    return socket.gethostbyaddr(str(ip))[0]
-  except socket.herror:
-    return "Unknown"
 
 @anvil.server.callable
 def scan_subnet(subnet):
-  hosts = {}
-  net = ipaddress.ip_network(subnet, strict=False)
-  with ThreadPoolExecutor(max_workers=50) as executor:
-    futures = {executor.submit(ping_host, ip): ip for ip in net.hosts()}
-    for future in as_completed(futures):
-      ip = futures[future]
-      if future.result():  # Host is alive
-        hostname = resolve_hostname(ip)
-        hosts[str(ip)] = {"hostname": hostname, "mac": None}
-  return hosts
+  devices = []
+  for ip in ipaddress.IPv4Network(subnet, strict=False):
+    ip_str = str(ip)
+    # Step 1: Ping host (quietly)
+    ping_result = subprocess.run(
+      ["ping", "-c", "1", "-W", "1", ip_str],
+      stdout=subprocess.DEVNULL,
+      stderr=subprocess.DEVNULL
+    )
+    if ping_result.returncode == 0:
+      # Step 2: Get MAC from ARP cache
+      try:
+        arp_output = subprocess.check_output(["arp", "-n", ip_str]).decode()
+        mac = None
+        for line in arp_output.splitlines():
+          if ip_str in line:
+            parts = line.split()
+            if len(parts) >= 3:
+              mac = parts[2]
+      except Exception:
+        mac = None
+        # Step 3: Resolve hostname
+      try:
+        nslookup_output = subprocess.check_output(["nslookup", ip_str]).decode()
+        hostname = None
+        for line in nslookup_output.splitlines():
+          if "name =" in line:
+            hostname = line.split("name =")[-1].strip()
+      except Exception:
+        hostname = None
+      devices.append({"IP": ip_str, "MAC": mac, "Hostname": hostname})
+  return devices
+      
+  if __name__ == "__main__":
+    subnet = "192.168.0.1/24"
+    results = scan_subnet(subnet)
+    for device in results:
+      print(f"IP: {device['IP']}, MAC: {device['MAC']}, Hostname: {device['Hostname']}")
+
 
 
   

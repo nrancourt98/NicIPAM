@@ -10,5 +10,5 @@ class add_ip_form(add_ip_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.check_box_dhcp.checked = True
     # Any code you write here will run before the form opens.
