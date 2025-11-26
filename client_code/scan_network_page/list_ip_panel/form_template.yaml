@@ -23,9 +23,14 @@ components:
     name: button_add
     properties: {background: 'theme:Secondary', foreground: 'theme:On Secondary', icon: 'fa:plus', icon_align: top, text: ''}
     type: Button
+  - event_bindings: {click: button_delete_click}
+    layout_properties: {grid_position: 'TUKEJZ,JOBVES'}
+    name: button_delete
+    properties: {background: 'theme:Primary', foreground: 'theme:On Secondary', icon: 'fa:trash', icon_align: top, text: ''}
+    type: Button
   layout_properties: {full_width_row: true, grid_position: 'QLMBMD,PDRWWW'}
   name: column_panel_main
-  properties: {}
+  properties: {col_widths: '{"AKXYCA":15,"VSXVUC":15,"JHHECR":20,"JVCHAO":5,"JOBVES":5}'}
   type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

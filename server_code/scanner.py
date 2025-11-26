@@ -20,7 +20,6 @@ import subprocess
 
 @anvil.server.callable
 def scan_subnet(subnet):
-  devices = []
   for ip in ipaddress.IPv4Network(subnet, strict=False):
     ip_str = str(ip)
     # Step 1: Ping host (quietly)
@@ -50,14 +49,7 @@ def scan_subnet(subnet):
             hostname = line.split("name =")[-1].strip()
       except Exception:
         hostname = None
-      devices.append({"IP": ip_str, "MAC": mac, "Hostname": hostname})
-  return devices
-      
-  if __name__ == "__main__":
-    subnet = "192.168.0.1/24"
-    results = scan_subnet(subnet)
-    for device in results:
-      print(f"IP: {device['IP']}, MAC: {device['MAC']}, Hostname: {device['Hostname']}")
+      app_tables.scans.add_row(ip=ip_str, mac=mac, hostname=hostname)
 
 
 

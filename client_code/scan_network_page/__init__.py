@@ -12,3 +12,4 @@ class scan_network_page(scan_network_pageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.repeating_panel_ip.items = app_tables.scans.search()

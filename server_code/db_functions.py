@@ -84,6 +84,34 @@ def toggle_dhcp(ip):
   address['dhcp'] = not address['dhcp']
   return address['dhcp']
 
+@anvil.server.callable
+def delete_scan_ip(ip):
+  item = app_tables.scans.get(ip=ip)
+  item.delete()
+  return True
+
+@anvil.server.callable
+def add_scanned_ip(ip, mac, hostname):
+  id = find_parent_id(ip)
+  if id is not None:
+    app_tables.address.add_row(
+      parent_id=id,
+      ip=ip,
+      ip_int=int(ipaddress.IPv4Address(ip)),
+      hostname=hostname,
+      mac=mac,
+      description=""
+    )
+    increment_used_count(id)
+    remove_scanned_ip(ip)
+    return True
+  else:
+    return False
+
+def remove_scanned_ip(ip):
+  item = app_tables.scans.get(ip=ip)
+  item.delete()
+
 def get_next_id():
   id = app_tables.networks.search()
   if id:
@@ -94,3 +122,13 @@ def get_next_id():
 def increment_used_count(network_id):
   net = app_tables.networks.get(id=network_id)
   net['used'] += 1
+
+@anvil.server.callable
+def find_parent_id(ip):
+  networks = app_tables.networks.search()
+  id = None
+  for i in networks:
+    if ipaddress.ip_address(ip) in ipaddress.ip_network(i['ip_addr']):
+      id = i['id']
+      break
+  return id

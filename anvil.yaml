@@ -50,7 +50,7 @@ db_schema:
     server: full
     title: networks
   scans:
-    client: none
+    client: search
     columns:
     - admin_ui: {order: 0, width: 200}
       name: ip
